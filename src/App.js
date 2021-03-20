@@ -8,9 +8,13 @@ function App() {
   const abilities = ["Anticipation", "Adaptability", "Run-Away"];
   const todayDate = new Date().toLocaleDateString();
 
+  const logWhenClicked = () => {
+    console.log("You just clicked the image!");
+  };
+
   return (
     <div>
-      <Logo appName="Group 1's Pokedex" />
+      <Logo appName="Group 1's Pokedex" logWhenClicked={logWhenClicked}/>
       <BestPokemon abilities={abilities} />
       <CaughtPokemon todayDate={todayDate} />
     </div>
