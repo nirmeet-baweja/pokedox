@@ -2,6 +2,7 @@ import React from "react";
 import Logo from "./Logo";
 import BestPokemon from "./BestPokemon";
 import CaughtPokemon from "./CaughtPokemon";
+import "./App.css";
 // import ReactDOM from "react-dom";
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
 
   return (
     <div>
-      <Logo appName="Group 1's Pokedex" logWhenClicked={logWhenClicked}/>
+      <Logo appName="Group 1's Pokedex" logWhenClicked={logWhenClicked} />
       <BestPokemon abilities={abilities} />
       <CaughtPokemon todayDate={todayDate} />
     </div>
