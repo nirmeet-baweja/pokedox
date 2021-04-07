@@ -4,7 +4,6 @@ function PokemonCity() {
   const [city, setCity] = useState("");
 
   const updateCity = (event) => {
-    console.log(event.target.value);
     setCity(event.target.value);
   };
 
