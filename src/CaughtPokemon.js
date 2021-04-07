@@ -3,20 +3,6 @@ import React, { useState } from "react";
 function CaughtPokemon(props) {
   const [caught, setCaught] = useState([]);
   const [pokemonNameInput, setPokemonNameInput] = useState("");
-  const pokemons = [
-    "Bulbasaur",
-    "Ivysaur",
-    "Venusaur",
-    "Charmander",
-    "Charmeleon",
-    "Charizard",
-    "Squirtle",
-    "Wartortle",
-    "Blastoise",
-    "Caterpie",
-    "Metapod",
-    "Butterfree",
-  ];
 
   const handleInputChange = (event) => {
     setPokemonNameInput(event.target.value);
