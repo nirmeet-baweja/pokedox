@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 function CaughtPokemon(props) {
   const [caught, setCaught] = useState([]);
-  const [index, setIndex] = useState(0);
+  const [pokemonNameInput, setPokemonNameInput] = useState("");
   const pokemons = [
     "Bulbasaur",
     "Ivysaur",
@@ -18,9 +18,13 @@ function CaughtPokemon(props) {
     "Butterfree",
   ];
 
+  const handleInputChange = (event) => {
+    setPokemonNameInput(event.target.value);
+  };
+
   const catchPokemon = () => {
-    setCaught(caught.concat(pokemons[index]));
-    setIndex((index) => (index + 1) % pokemons.length);
+    pokemonNameInput && setCaught(caught.concat(pokemonNameInput));
+    setPokemonNameInput("");
   };
 
   return (
@@ -28,6 +32,11 @@ function CaughtPokemon(props) {
       <span>
         Caught {caught.length} Pokemon on {props.todayDate}
       </span>
+      <input
+        type="text"
+        value={pokemonNameInput}
+        onChange={handleInputChange}
+      />
       <button onClick={catchPokemon} className="catchPokemonBtn">
         Catch a Pokemon
       </button>
